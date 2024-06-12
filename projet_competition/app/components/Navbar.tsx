@@ -11,7 +11,7 @@ const Navbar = () => (
             </div>
             <Link href="/download">
                 <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700 sm:ml-4">
-                    Télécharger l'app
+                    Télécharger l&apos;app
                 </button>
             </Link>
         </div>

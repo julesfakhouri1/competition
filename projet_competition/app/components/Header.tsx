@@ -14,7 +14,7 @@ const Header = () => (
             <div className="w-1/2">
                 <div className="bg-gray-200 h-48 flex items-center justify-center">Illustration</div>
                 <Link href="/download" passHref>
-                    <button className="mt-4 bg-purple-700 text-white px-4 py-2 rounded">Télécharger l'app</button>
+                    <button className="mt-4 bg-purple-700 text-white px-4 py-2 rounded">Télécharger l&apos;app</button>
                 </Link>
             </div>
         </div>
