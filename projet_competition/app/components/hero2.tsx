@@ -3,7 +3,7 @@ import Link from "next/link";
 
 
 const Hero2 = () => (
-  <section className="mt-16  py-16 px-[140px] max-sm:px-2 ! max-sm:pr-4 bg-[#FFFFFF]">
+  <section className="mt-16  py-16 px-[140px] max-sm:px-2 ! max-sm:pr-4 ">
     <h2 className="text-2xl max-sm:text-lg  mb-4 font-bold text-center text-[#4C3768]">
     Nos articles
     </h2>
