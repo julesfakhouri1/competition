@@ -3,9 +3,9 @@ import Header from "./components/Header";
 import Solution from "@/app/components/Solution";
 import Footer from "./components/footer";
 import HeroOne from "./components/hero1";
-import AdventurePartnerSection from './components/partner'
 import Aunty from "./components/aunty";
 import Hero2 from './components/hero2'
+import AvisSection from "./components/avis";
 
 // overflow-x-hidden
 
@@ -16,7 +16,7 @@ export default function HomePage() {
       <Header />
       <Solution />
       <Aunty/>
-      <AdventurePartnerSection />
+      <AvisSection />
       <HeroOne />
       <Hero2/>
       <Footer />
