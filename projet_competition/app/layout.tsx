@@ -18,11 +18,8 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <Head>
-        {/* Google Analytics */}
-        <script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-56QLW81S6W"
-        ></script>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-56QLW81S6W"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -32,7 +29,7 @@ export default function RootLayout({
               gtag('config', 'G-56QLW81S6W');
             `,
           }}
-        />
+        ></script>
       </Head>
       <body className={inter.className}>{children}</body>
     </html>
