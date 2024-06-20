@@ -7,7 +7,7 @@ const Hero = () => (
       S&apos;La quête de Poma
     </h2>
     <div className="flex flex-wrap justify-around mt-8">
-      <div className="bg-[#DDD4E7] flex text-center items-center justify-center p-4 max-sm:p-0 rounded-lg m-2">
+      <div className="bg-[#D5C2E0] flex text-center items-center justify-center p-4 max-sm:p-0 rounded-lg m-2">
         <div className="h-[16rem] w-[200px] py-8">
           <Image
             src="/images/Group 692.svg"
@@ -26,7 +26,7 @@ const Hero = () => (
         </div>
       </div>
 
-      <div className="bg-[#DDD4E7] flex text-center items-center justify-center p-4 max-sm:p-0 rounded-lg m-2">
+      <div className="bg-[#D5C2E0] flex text-center items-center justify-center p-4 max-sm:p-0 rounded-lg m-2">
         <div className="h-[16rem] w-[200px] py-8">
           <Image
             src="/images/Frame (2).svg"
@@ -46,7 +46,7 @@ const Hero = () => (
       </div>
     </div>
 
-    <div className="bg-[#DDD4E7] flex flex-row max-sm:flex-col text-center items-center justify-between p-4 max-sm:p-0 rounded-lg my-2 mx-[1%]">
+    <div className="bg-[#D5C2E0] flex flex-row max-sm:flex-col text-center items-center justify-between p-4 max-sm:p-0 rounded-lg my-2 mx-[1%]">
       <div className="max-sm:w-[50%] px-4">
         <h3 className="mt-4 max-sm:text-sm w-[50%] flex justify-start text-start max-sm:-ml-[50%] max-sm:w-[200%] text-xl font-bold text-[#4C3768]">
           Calendrier d&apos;activité
