@@ -6,17 +6,17 @@ import "./globals.css";
 import { Darker_Grotesque, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
 
-export const darkerGrotesque = Darker_Grotesque({
+const darkerGrotesque = Darker_Grotesque({
   subsets: ["latin"],
   variable: "--font-darker-grotesque",
 });
 
-export const playfairDisplay = Playfair_Display({
+const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair-display",
 });
 
-export const avenir = localFont({
+const avenir = localFont({
   src: [
     {
       path: "./fonts/Avenir/AvenirRegular/AvenirRegular.ttf",
@@ -37,7 +37,7 @@ export const avenir = localFont({
   variable: "--font-avenir",
 });
 
-export const hellixmedium = localFont({
+const hellixmedium = localFont({
   src: [
     {
       path: "./fonts/Hellix/Hellix-Medium.woff2",
@@ -53,7 +53,7 @@ export const hellixmedium = localFont({
   variable: "--font-hellix-medium",
 });
 
-export const hellixregular = localFont({
+const hellixregular = localFont({
   src: [
     {
       path: "./fonts/Hellix/Hellix-Regular.woff2",
@@ -69,7 +69,7 @@ export const hellixregular = localFont({
   variable: "--font-hellix-regular",
 });
 
-export const metadata: Metadata = {
+const metadata: Metadata = {
   title: "Poma",
   description: "Poma app",
 };
