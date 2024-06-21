@@ -30,7 +30,7 @@ const Header = () => (
     </p>
     <Link href="/download">
         <button className="relative top-[160px] max-sm:relative  max-sm:top-[460px] center bg-[#74549F] text-white px-6 py-2 rounded-[7.21px]">
-          Télécharger l&apos;app
+        Accéder à l&apos;app
         </button>
       </Link>
       <div className="flex max-sm:fs-[80px] justify-center relative top-[220px] max-sm:relative max-sm:top-[500px]">
