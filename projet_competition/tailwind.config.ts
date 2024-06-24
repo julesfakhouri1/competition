@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
+   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -26,13 +26,18 @@ const config: Config = {
 
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        "darker-grotesque": ["var(--font-darker-grotesque)"],
+        avenir: ["var(--font-avenir)"],
+        playfair: ["var(--font-playfair-display)"],
+        hellixregular: ["var(--font-hellix-regular)"],
+        hellixmedium: ["var(--font-hellix-medium)"],
+      },
+      colors: {
+        primary: "#74549F",
       },
     },
   },
-
+  plugins: [],
 };
 export default config;
