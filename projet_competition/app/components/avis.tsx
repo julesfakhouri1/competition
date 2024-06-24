@@ -25,13 +25,14 @@ const avis = [
     name: 'Mathéo',
     age: '19 ans',
     role: 'Passionné du street art',
-    img: '/images/Rectangle 86 (8).svg',
+
+    img: '/images/portrait-young-woman-listening-music-through-mobile-phone-stairs 2 (1).svg',
   },
   {
     name: 'Léana',
     age: '19 ans',
     role: 'Étudiante en Marketing',
-    img: '/images/portrait-young-woman-listening-music-through-mobile-phone-stairs 2 (1).svg',
+    img: '/images/Rectangle 86 (8).svg',
   },
 ];
 
@@ -54,11 +55,11 @@ const AvisSection = () => {
 
   return (
     <section className="py-[8%] px-4 bg-[#FFFFFF] ">
-      <h2 className="text-5xl max-sm:text-2xl font-bold text-center text-[#4C3768]">
-        Partenaire d&apos;aventure
+      <h2 className="max-lg:text-[27px] text-[52px] font-[800] text-center text-[#4C3768] font-playfair">
+        Partenaire d’aventure
       </h2>
-      <p className="text-center max-sm:text-sm relative max-sm:relative max-sm:left-0 left-[20%] text-xl mt-4 max-sm:w-[100%] w-[60%] text-[#4C3768]">
-        Vous avez le pouvoir de sélectionner vos petits-enfants de cœur en fonction de vos affinités et préférences personnelles. Que ce soit par des centres d&apos;intérêt communs, des valeurs partagées ou simplement une connexion instinctive.
+      <p className="text-center max-sm:text-[20px] relative max-sm:relative max-sm:left-0 left-[20%] text-xl mt-4 max-sm:w-[100%] w-[60%] text-[#4C3768] font-[500] leading-[27px] font-darker-grotesque">
+        Vous avez le pouvoir de sélectionner vos petits-enfants de cœur en fonction de vos affinités et préférences personnelles. Que ce soit par des centres d’intérêt communs, des valeurs partagées ou simplement une connexion instinctive.
       </p>
 
       <div className="mt-8">
@@ -75,7 +76,7 @@ const AvisSection = () => {
                   className="flex-none w-full sm:w-1/3 transition-transform transform scale-90"
                   style={{ transform: `scale(${index === currentIndex ? 1 : 0.8})` }}
                 >
-                  <div className="text-center rounded-lg mx-2">
+                  <div className="text-center rounded-lg mx-2 font-darker-grotesque">
                     <div className="rounded-xl flex items-center justify-center h-48 w-full overflow-hidden">
                       <Image
                         src={partner.img}
@@ -85,10 +86,10 @@ const AvisSection = () => {
                         height={300}
                       />
                     </div>
-                    <h3 className="mt-4 text-xl max-sm:text-xs max-sm:font-light font-bold text-[#4C3768] w-full">
+                    <h3 className="mt-4 text-xl max-sm:text-[20px] leading-[27px] font-[500] text-[#4C3768] w-full">
                       {partner.name}, {partner.age}
                     </h3>
-                    <p className="mt-2 text-[#4C3768] text-center w-full">
+                    <p className="mt-2 text-[#4C3768] text-center w-full text-[16px]">
                       {partner.role}
                     </p>
                   </div>
