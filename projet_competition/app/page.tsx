@@ -6,9 +6,7 @@ import HeroOne from "./components/hero1";
 import Aunty from "./components/aunty";
 import Hero2 from './components/hero2'
 import AvisSection from "./components/avis";
-import Connexion from "./components/onboarding";
-import Onboarding from "./components/onboarding";
-
+import Onboarding from "./components/onboarding"; // Assurez-vous que ce chemin est correct
 
 // overflow-x-hidden
 
@@ -18,11 +16,13 @@ export default function HomePage() {
       <Navbar />
       <Header />
       <Solution />
-      <Aunty/>
+      <Aunty />
       <AvisSection />
       <HeroOne />
-      <Hero2/>
+      <Hero2 />
+      <Onboarding /> {/* Utilisez le composant importé ici */}
       <Footer />
     </div>
   );
 }
+
