@@ -13,31 +13,20 @@ export function useCookiebot() {
 
   useEffect(() => {
     const handleCookiebotLoad = () => {
-      console.log('CookiebotOnLoad event fired')
       if (window.Cookiebot) {
-        console.log('Setting Cookiebot in state')
         setCookiebot(window.Cookiebot)
       }
     }
 
+    // Check if Cookiebot is already available
     if (window.Cookiebot) {
-      console.log('Cookiebot already available')
       setCookiebot(window.Cookiebot)
-    } else {
-      console.log('Cookiebot not available, using mock object')
-      setCookiebot({
-        consent: {
-          marketing: false,
-          statistics: false,
-          preferences: false
-        },
-        show: () => console.log('Mock show method called'),
-        renew: () => console.log('Mock renew method called')
-      })
     }
 
+    // Listen for Cookiebot to load
     window.addEventListener('CookiebotOnLoad', handleCookiebotLoad)
 
+    // Cleanup listener on component unmount
     return () => {
       window.removeEventListener('CookiebotOnLoad', handleCookiebotLoad)
     }
