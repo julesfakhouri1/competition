@@ -40,14 +40,7 @@ const AvisSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % avis.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + avis.length) % avis.length);
-  };
+  const [dragOffset, setDragOffset] = useState(0);
 
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
     setIsDragging(true);
@@ -58,45 +51,46 @@ const AvisSection = () => {
     if (!isDragging) return;
     const currentX = 'touches' in e ? e.touches[0].clientX : e.clientX;
     const diff = startX - currentX;
-    if (Math.abs(diff) > 50) {
-      if (diff > 0) {
-        nextSlide();
-      } else {
-        prevSlide();
-      }
-      setIsDragging(false);
-    }
+    setDragOffset(diff);
   };
 
   const handleDragEnd = () => {
+    if (!isDragging) return;
     setIsDragging(false);
+    const threshold = window.innerWidth * 0.1;
+    if (Math.abs(dragOffset) > threshold) {
+      if (dragOffset > 0) {
+        setCurrentIndex((prev) => Math.min(prev + 1, avis.length - 1));
+      } else {
+        setCurrentIndex((prev) => Math.max(prev - 1, 0));
+      }
+    }
+    setDragOffset(0);
   };
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
 
-    container.addEventListener('mousedown', handleDragStart as any);
-    container.addEventListener('mousemove', handleDragMove as any);
-    container.addEventListener('mouseup', handleDragEnd);
-    container.addEventListener('mouseleave', handleDragEnd);
-    container.addEventListener('touchstart', handleDragStart as any);
-    container.addEventListener('touchmove', handleDragMove as any);
-    container.addEventListener('touchend', handleDragEnd);
+    const dragStartHandler = (e: MouseEvent | TouchEvent) => handleDragStart(e as any);
+    const dragMoveHandler = (e: MouseEvent | TouchEvent) => handleDragMove(e as any);
+
+    container.addEventListener('mousedown', dragStartHandler);
+    container.addEventListener('touchstart', dragStartHandler);
+    window.addEventListener('mousemove', dragMoveHandler);
+    window.addEventListener('touchmove', dragMoveHandler);
+    window.addEventListener('mouseup', handleDragEnd);
+    window.addEventListener('touchend', handleDragEnd);
 
     return () => {
-      container.removeEventListener('mousedown', handleDragStart as any);
-      container.removeEventListener('mousemove', handleDragMove as any);
-      container.removeEventListener('mouseup', handleDragEnd);
-      container.removeEventListener('mouseleave', handleDragEnd);
-      container.removeEventListener('touchstart', handleDragStart as any);
-      container.removeEventListener('touchmove', handleDragMove as any);
-      container.removeEventListener('touchend', handleDragEnd);
+      container.removeEventListener('mousedown', dragStartHandler);
+      container.removeEventListener('touchstart', dragStartHandler);
+      window.removeEventListener('mousemove', dragMoveHandler);
+      window.removeEventListener('touchmove', dragMoveHandler);
+      window.removeEventListener('mouseup', handleDragEnd);
+      window.removeEventListener('touchend', handleDragEnd);
     };
-  }, []);
-
-  const infiniteAvis = [...avis];
-  const offset = avis.length;
+  }, [isDragging]);
 
   return (
     <section className="py-[8%] px-4 bg-[#FFFFFF]">
@@ -111,11 +105,12 @@ const AvisSection = () => {
         <div 
           className="flex transition-transform duration-300 ease-in-out"
           style={{ 
-            transform: `translateX(calc(-${currentIndex * (100 / avis.length)}% - ${currentIndex * 30}px))`,
+            transform: `translateX(calc(-${currentIndex * (100 / avis.length)}% - ${currentIndex * 30}px - ${dragOffset}px))`,
+            cursor: isDragging ? 'grabbing' : 'grab'
           }}
         >
-          {infiniteAvis.map((partner, index) => (
-            <div key={index} className="flex-none w-[calc(100% - 30px)] mx-[15px] lg:w-[calc(100% - 42px)] lg:mx-[21px]">
+          {avis.map((partner, index) => (
+            <div key={index} className="flex-none w-[calc(100% - 30px)] mx-[15px] lg:w-[calc(20% - 42px)] lg:mx-[21px]">
               <div className="text-center rounded-lg font-darker-grotesque">
                 <div className="rounded-xl flex items-center justify-center h-48 w-full overflow-hidden">
                   <Image
@@ -142,7 +137,7 @@ const AvisSection = () => {
             <button
               key={index}
               className={`h-2 w-2 mx-1 rounded-full ${
-                currentIndex % avis.length === index ? 'bg-purple-600' : 'bg-gray-300'
+                currentIndex === index ? 'bg-purple-600' : 'bg-gray-300'
               }`}
               onClick={() => setCurrentIndex(index)}
             />
