@@ -167,10 +167,10 @@ const Hero = () => (
     <h2 className="text-[36px] lg:text-[52px] font-[800] text-center pt-4 text-[#4C3768] font-playfair">
       La quête de Poma
     </h2>
-    <div className=" mx-auto px-4 mt-8 font-darker-grotesque">
+    <div className="mx-auto px-4 mt-8 font-darker-grotesque">
     
   <div className="flex flex-col md:flex-row md:space-x-4">
-    <div className="bg-[#DDD4E7] flex text-center items-center justify-center px-4 rounded-lg md:mb-0 md:w-1/2 h-[330px]">
+    <div className="bg-[#DDD4E7] flex text-center items-center justify-center px-4 rounded-lg md:mb-0 md:w-1/2 h-[330px] mt-[27px]">
       <div className="h-[16rem] w-[200px] py-8">
         <Image
           src="/images/Group 692.svg"
