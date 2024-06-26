@@ -95,7 +95,7 @@ const AvisSection = () => {
     };
   }, []);
 
-  const infiniteAvis = [...avis, ...avis, ...avis]; // Triple the array for infinite scroll
+  const infiniteAvis = [...avis];
   const offset = avis.length;
 
   return (
