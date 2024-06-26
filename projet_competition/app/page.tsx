@@ -6,23 +6,21 @@ import HeroOne from "./components/hero1";
 import Aunty from "./components/aunty";
 import Hero2 from './components/hero2'
 import AvisSection from "./components/avis";
-import Onboarding from "./components/onboarding"; // Assurez-vous que ce chemin est correct
+import CookieConsent from './components/CookieConsent'
 
-// overflow-x-hidden
 
 export default function HomePage() {
   return (
-    <div className="bg-purple-100 overflow-x-hidden">
+    <div className="overflow-x-hidden">
+       <CookieConsent />
       <Navbar />
       <Header />
       <Solution />
-      <Aunty />
+      <Aunty/>
       <AvisSection />
       <HeroOne />
-      <Hero2 />
-      <Onboarding /> {/* Utilisez le composant importé ici */}
+      <Hero2/>
       <Footer />
     </div>
   );
 }
-
