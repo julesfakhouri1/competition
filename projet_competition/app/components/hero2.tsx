@@ -3,18 +3,17 @@ import Link from "next/link";
 
 
 const Hero2 = () => (
-  <section className="mt-16 py-16 px-4 md:px-[140px] font-darker-grotesque">
+  <section className="pb-[62px] lg:pb-[140px] mt-16 pt-16 px-4 md:px-[140px] font-darker-grotesque">
     <h2 className="text-3xl md:text-5xl mb-4 font-[800] text-center text-[#4C3768] font-playfair">
       Nos articles
     </h2>
     <div className="flex justify-center">
-      <div className="relative w-full max-w-[612px]">
+      <div className="relative w-full lg:max-w-[612px]">
         <Image 
           src="/images/V1 1.svg" 
           alt="helii" 
           width={612} 
           height={418}
-          layout="responsive"
         />
         <div className="absolute bottom-0 right-0">
           <Link href="/download">
@@ -50,13 +49,13 @@ const Hero2 = () => (
 
     <div >
         <div className="flex-col w-[100%] center justify-center items-center relative left-[40%] max-sm:left-3 max-sm:mt-14 pr-[16px]">
-            <div className="my-4 w-[50%] max-sm:w-[100%]">
-            <h1 className="text-[#4C3768] font-bold text-[28px] max-sm:text-[20px] leading-[27px] " >
+            <div className="w-[50%] max-sm:w-[100%]">
+            <h1 className="text-[#4C3768] font-bold text-[28px] max-sm:text-[20px] leading-[37px] pt-[53px] max-w-[486px]" >
             Les Avantages Émotionnels des Relations Entre Grands-Parents et Petits-Enfants
             </h1>
             </div>
-            <div className="my-4 w-[50%] max-sm:w-[100%]">
-            <h2 className="text-[20px] lg:text-[23px] text-[#555A65] leading-[27px]">
+            <div className="pt-[28px] w-[50%] max-sm:w-[100%]">
+            <h2 className="text-[20px] lg:text-[23px] text-[#555A65] leading-[37px] max-w-[567px]">
             Les relations entre grands-parents et petits-enfants offrent des avantages émotionnels significatifs, enrichissant la vie des jeunes adultes de 18 à 25 ans de multiples façons. 
             </h2>
 
