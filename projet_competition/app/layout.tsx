@@ -5,6 +5,8 @@ import "./globals.css";
 // lib/fonts.ts
 import { Darker_Grotesque, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
+import CookieBotScript from './components/CookieBotScript'
+
 
 const darkerGrotesque = Darker_Grotesque({
   subsets: ["latin"],
@@ -74,6 +76,8 @@ const metadata: Metadata = {
   description: "Poma app",
 };
 
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -96,9 +100,12 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-H5YM0DM6G5');
           `}
-        </Script>
+        </Script>     
       </head>
-      <body>{children}</body>
+      <body>
+      <CookieBotScript />
+
+        {children}</body>
     </html>
   );
 }
