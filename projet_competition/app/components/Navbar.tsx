@@ -1,19 +1,20 @@
 // components/Navbar.tsx
 import Image from 'next/image';
 import Link from 'next/link';
+import logo from "/public/images/logo-poma.svg"
 
 const Navbar = () => (
-  <nav className="pt-7 px-6">
+  <nav className="pt-7 px-6 bg-[F3EFF6]">
     <div className="container mx-auto p-4 flex justify-between items-center">
       <div className="flex items-center">
-        <Link href="/" legacyBehavior>
-          <a>
-            <Image src="/images/logo-poma.svg" alt="Logo Poma" width={96} height={26} className="mr-2 cursor-pointer" />
-          </a>
+        <Link href="/" >
+          
+            <Image src={logo} alt="Logo Poma" className="mr-2 cursor-pointer w-[96px] h-[26px] md:w-[172px] md:h-[46px]" />
+        
         </Link>
       </div>
       <Link href="/onboarding">
-        <button className="mt-1 text-[#74549F] font-bold border-2 border-[#74549F] px-2 py-2 rounded-[7.21px] font-darker-grotesque text-[18px]">
+        <button className="text-primary font-bold border-[3px] border-primary rounded-[8px] font-darker-grotesque text-[20px] px-[7px] md:px-[20px] pt-[4px] md:pt-[10px] pb-[7px] md:pb-[12px] leading-[27px]">
           Télécharger l’app
         </button>
       </Link>
