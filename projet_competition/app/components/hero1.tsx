@@ -170,7 +170,7 @@ const Hero = () => (
     <div className=" mx-auto px-4 mt-8 font-darker-grotesque">
     
   <div className="flex flex-col md:flex-row md:space-x-4">
-    <div className="bg-[#DDD4E7] flex text-center items-center justify-center px-4 rounded-lg md:mb-0 md:w-1/2">
+    <div className="bg-[#DDD4E7] flex text-center items-center justify-center px-4 rounded-lg md:mb-0 md:w-1/2 h-[330px]">
       <div className="h-[16rem] w-[200px] py-8">
         <Image
           src="/images/Group 692.svg"
@@ -189,7 +189,7 @@ const Hero = () => (
       </div>
     </div>
 
-    <div className="bg-[#DDD4E7]  flex flex-row-reverse text-center items-center justify-center px-4 mt-[27px] rounded-lg md:w-1/2">
+    <div className="bg-[#DDD4E7]  flex flex-row-reverse text-center items-center justify-center px-4 mt-[27px] rounded-lg md:w-1/2 h-[330px]">
       <div className="h-[16rem] w-[200px] py-8">
         <Image
           src="/images/Frame (2).svg"
