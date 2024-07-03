@@ -1,6 +1,6 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/footer'
+import Navbar from '@/app/components/Navbar'
+import Footer from '@/app/components/footer'
 import Link from "next/link"
 
 export default function page() {
