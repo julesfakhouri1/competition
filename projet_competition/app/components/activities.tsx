@@ -134,7 +134,7 @@ const Activities = ({mobileNav, setMobileNav, handleMobileNav}:MobileNavProps) =
                             {['Lecture et écriture', 'Sports et loisirs', 'Arts et culture', 'Musique et danse', 'Jeux et divertissement'].map((data, ind)=>{
 
                                 return(
-                                    <span className="w-[312px] h-[49px] border-t border-[#513675] border-r border-l  flex items-center justify-start gap-[16px] bg-white cursor-pointer hover:bg-[#E9E2F0] " onClick={()=> handleActivities(data)} >
+                                    <span key={ind} className="w-[312px] h-[49px] border-t border-[#513675] border-r border-l  flex items-center justify-start gap-[16px] bg-white cursor-pointer hover:bg-[#E9E2F0] " onClick={()=> handleActivities(data)} >
                                         <span className=" text-[#513675] flex items-end justify-center w-[24px] h-[24px] ml-[16px] text-[#513675] ">
                                             {selectedActivities.includes(data) && <IoCheckmark size={'100%'} />}
                                         </span>
@@ -177,7 +177,7 @@ const Activities = ({mobileNav, setMobileNav, handleMobileNav}:MobileNavProps) =
                     {selectedActivities.map((data, ind)=>{
 
                         return(
-                            <span className=" flex items-start justify-center gap-[8px] border border-[#513675] rounded-[36px] h-[34px] px-[33px] ">
+                            <span key={ind} className=" flex items-start justify-center gap-[8px] border border-[#513675] rounded-[36px] h-[34px] px-[33px] ">
                                 <p className="text-[#513675] mt-[1px] text-[17px] grot-font font-semibold ">{data}</p>
                                 <span className="mt-[7.5px] cursor-pointer " onClick={()=> removeFilter(data)} ><RxCross2 size={16} /> </span>
                             </span>
@@ -486,13 +486,13 @@ const Activities = ({mobileNav, setMobileNav, handleMobileNav}:MobileNavProps) =
                 <div className="w-full flex flex-col items-center justify-start gap-[20px] ">
                     {activityList.map((data, ind)=>{
                         return(
-                            <div className="w-[90%] flex flex-row items-start justify-center gap-[24px] ">
+                            <div  key={ind} className="w-[90%] flex flex-row items-start justify-center gap-[24px] ">
                                 
                                 {data.map((data, ind)=>{
                                     const {img, name, placeholder} = data
 
                                     return(
-                                        <div className="w-1/2 h-[182.92px] rounded-[10px] flex flex-col items-center jusity-start bg-[#E9E2F0]  ">
+                                        <div key={ind}  className="w-1/2 h-[182.92px] rounded-[10px] flex flex-col items-center jusity-start bg-[#E9E2F0]  ">
                                             <span className="w-[96.32px] h-[74.92px] mt-[20px] bg-gray-100 "></span>
                                             <span className="h-[48px] mt-[20px] mx-[20px]  flex items-center justify-center  ">
                                                 <p className="text-[22px] grot-font text-center font-extrabold leading-[24px] w-full text-[#513675]   ">{name}</p>

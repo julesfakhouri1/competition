@@ -72,7 +72,7 @@ const Accueil = ({mobileNav, setMobileNav, handleMobileNav}:MobileNavProps) => {
                         {profile_two.map((data, ind)=>{
                             
                             return(
-                                <div className="w-[254] flex flex-col items-center justify-start gap-[28px] ">
+                                <div key={ind} className="w-[254] flex flex-col items-center justify-start gap-[28px] ">
                                     <span className="h-[329.84px] relative  ">
                                         <span className="absolute h-[44.195px] w-[44.195px] rounded-[100%] bg-[#513675] top-[45%] right-[-22.1px] z-[10] border-[7.545px] border-white "></span>
                                         <span className="w-[236px] h-[329.84px] rounded-[6px] flex items-center justify-center relative overflow-hidden  ">
@@ -102,7 +102,7 @@ const Accueil = ({mobileNav, setMobileNav, handleMobileNav}:MobileNavProps) => {
                         {profile_three.map((data, ind)=>{
                             
                             return(
-                                <span className="w-[344px] relative">
+                                <span key={ind} className="w-[344px] relative">
 
                                             <span className="z-[20] w-[90%]  mx-[19px] absolute top-[173px]  flex flex-col items-start  justify-start ">
 
