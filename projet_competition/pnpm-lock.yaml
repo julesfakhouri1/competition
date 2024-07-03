@@ -15,7 +15,7 @@ importers:
         specifier: ^4.4.3
         version: 4.4.3
       mini-css-extract-plugin:
-        specifier: ^1.3.0
+        specifier: ^1.6.2
         version: 1.6.2(webpack@5.92.1)
       navigation:
         specifier: ^6.2.0
