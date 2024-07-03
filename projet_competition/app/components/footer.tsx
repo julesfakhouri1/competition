@@ -30,9 +30,9 @@ const Footer = () => {
           <div className="w-full sm:w-1/2 pr-2 mb-8 md:mb-0">
             <h3 className="font-semibold text-2xl lg:text-[26px] mb-8">Nous suivre</h3>
             <div className="flex space-x-4 mb-4">
-              <a href="#"><Image src="/images/Group.svg" alt="Instagram" width={20} height={20} /></a>
-              <a href="#"><Image src="/images/Vector.svg" alt="Facebook" width={15} height={20} className="-translate-y-1" /></a>
-              <a href="#"><Image src="/images/Vector (1).svg" alt="LinkedIn" width={20} height={20} /></a>
+              <a href="#"><Image src="/images/instagram.webp" alt="Instagram" width={20} height={20} /></a>
+              <a href="#"><Image src="/images/facebook.webp" alt="Facebook" width={15} height={20} className="-translate-y-1" /></a>
+              <a href="#"><Image src="/images/linkedin.webp" alt="LinkedIn" width={20} height={20} /></a>
             </div>
             <ul className="space-y-4 text-lg lg:text-[22px] font-light">
               <li><Link href="/mentions-legales" className="hover:underline">Mentions légales</Link></li>
