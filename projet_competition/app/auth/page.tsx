@@ -43,7 +43,7 @@ const AuthLanding = () => {
             </span>
         </div>
 
-        {/* this is for screen bigger than mobile phones */}
+        {/* this is for larger screen */}
         <div className="hidden sm:block sm:w-full sm:h-full sm:flex sm:items-center sm:justify-center ">
             <div className="w-full h-full flex flex-col items-center justify-center relative max-md:w-[90%] ">
 
@@ -51,7 +51,7 @@ const AuthLanding = () => {
             {level == 'one' && 
             
             <div className=" w-full  w-[350px] mt-[15px] flex flex-col items-center justify-start relative "  >
-                <span className="w-[198px] bg-gren-100 h-[45.79px] sm:w-[430px] sm:h-[125px]  flex items-center justify-center relative overflow-hidden  ">
+                <span className="w-[198px] bg-gren-100 h-[45.79px] sm:w-[450px] sm:h-[125px]  flex items-center justify-center relative overflow-hidden  ">
                     <Image 
                         src="/logo-poma.svg" 
                         alt="Authentication" 
@@ -85,10 +85,7 @@ const AuthLanding = () => {
                 <button className="mx-auto w-[211px] h-[56px] bg-[#513675] rounded-[6.44px] mt-[20px] sm:mt-[21.48] grot-font flex items-start justify-center hover:bg-[#6D489D] font-bold sm:font-medium"  onClick={()=> setLevel('two')}>
                     <span className=" h-[24px]  w-[54px] sm:h-[36.47px] sm:w-[104.92px] mt-[10.93px] sm:mt-[7px] flex items-start justify-between  text-[#F3EFF6] gap-3 ">
                         <p className=" text-[#F3EFF6] text-[18px] sm:text-[23px] grot-font sm:mt-[2px] sm:leading-[32.2px] ">Suivant</p>
-                        <span className="hidden sm:block sm:w-[25px] sm:flex sm:items-center sm:justify-end sm:relative sm:mt-[9px] ">
-                            <IoIosArrowForward size={23} />
-                            <span className="w-[10px] absolute -left-[5px]"><LuDot size={23} /> </span>
-                        </span>
+                        
                     </span>
                 </button>
 
@@ -133,10 +130,7 @@ const AuthLanding = () => {
                 <button className="mx-auto w-[211px] h-[56px] bg-[#513675] rounded-[6.44px] mt-[20px] sm:mt-[21.48] grot-font flex items-start justify-center hover:bg-[#6D489D] font-bold sm:font-medium"  onClick={()=> setLevel('three')}>
                     <span className=" h-[24px]  w-[54px] sm:h-[36.47px] sm:w-[104.92px] mt-[10.93px] sm:mt-[7px] flex items-start justify-between  text-[#F3EFF6] gap-3 ">
                         <p className=" text-[#F3EFF6] text-[18px] sm:text-[23px] grot-font sm:mt-[2px] sm:leading-[32.2px] ">Suivant</p>
-                        <span className="hidden sm:block sm:w-[25px] sm:flex sm:items-center sm:justify-end sm:relative sm:mt-[9px] ">
-                            <IoIosArrowForward size={23} />
-                            <span className="w-[10px] absolute -left-[5px]"><LuDot size={23} /> </span>
-                        </span>
+                        
                     </span>
                 </button>
 
@@ -181,10 +175,6 @@ const AuthLanding = () => {
                 <button className="mx-auto w-[211px] h-[56px] bg-[#513675] rounded-[6.44px] mt-[20px] sm:mt-[21.48] grot-font flex items-start justify-center hover:bg-[#6D489D] font-bold sm:font-medium"  onClick={()=> setLevel('one')}>
                     <span className=" h-[24px]  w-[54px] sm:h-[36.47px] sm:w-[104.92px] mt-[10.93px] sm:mt-[7px] flex items-start justify-between  text-[#F3EFF6] gap-3 ">
                         <p className=" text-[#F3EFF6] text-[18px] sm:text-[23px] grot-font sm:mt-[2px] sm:leading-[32.2px] ">Suivant</p>
-                        <span className="hidden sm:block sm:w-[25px] sm:flex sm:items-center sm:justify-end sm:relative sm:mt-[9px] ">
-                            <IoIosArrowForward size={23} />
-                            <span className="w-[10px] absolute -left-[5px]"><LuDot size={23} /> </span>
-                        </span>
                     </span>
                 </button>
 
@@ -234,15 +224,7 @@ const AuthLanding = () => {
             <button className="w-[304px] h-[48.95px] sm:w-[211px] sm:h-[56px] bg-[#513675] rounded-[64px] sm:rounded-[6.44px] mt-[40px] sm:mt-[21.48] grot-font flex items-start justify-center hover:bg-[#6D489D] font-bold sm:font-medium"  onClick={()=> setLevel('two')}>
                 <span className=" h-[24px] w-[54px] sm:h-[36.47px] mt-[10.93px] sm:mt-[7px] flex items-center justify-between  text-[#F3EFF6] gap-3 ">
                     <p className=" text-[#F3EFF6] text-[18px] sm:text-[23px] ">Suivant</p>
-                    <span className="hidden sm:block h-[16.03px] w-[14.92px] relative   flex items-center justify-end">
-                        <span className="absolute w-[4.23px] h-[4.23px] bg-[#F3EFF6] flex items-center justfy-center rounded-[100%] right-[14.92px] "></span>
-                        <span className="flex items-center justify-end  h-full ">
-
-                            <PiCaretRightBold size={22}  />
-                        </span>
-                        
-
-                    </span>
+                    
                 </span>
             </button>
 
@@ -290,15 +272,7 @@ const AuthLanding = () => {
         <button className="w-[304px] h-[48.95px] sm:w-[211px] sm:h-[56px] bg-[#513675] rounded-[64px] sm:rounded-[6.44px] mt-[40px] sm:mt-[21.48] grot-font flex items-start justify-center hover:bg-[#6D489D] font-bold sm:font-medium"  onClick={()=> setLevel('three')}>
             <span className=" h-[24px] w-[54px] sm:h-[36.47px] mt-[10.93px] sm:mt-[7px] flex items-center justify-between  text-[#F3EFF6] gap-3 ">
                 <p className=" text-[#F3EFF6] text-[18px] sm:text-[23px] ">Suivant</p>
-                <span className="hidden sm:block h-[16.03px] w-[14.92px] relative   flex items-center justify-end">
-                    <span className="absolute w-[4.23px] h-[4.23px] bg-[#F3EFF6] flex items-center justfy-center rounded-[100%] right-[14.92px] "></span>
-                    <span className="flex items-center justify-end  h-full ">
-
-                        <PiCaretRightBold size={22}  />
-                    </span>
-                    
-
-                </span>
+                
             </span>
         </button>
 
@@ -345,15 +319,6 @@ const AuthLanding = () => {
             <button className="w-[304px] h-[48.95px] sm:w-[211px] sm:h-[56px] bg-[#513675] rounded-[64px] sm:rounded-[6.44px] mt-[40px] sm:mt-[21.48] grot-font flex items-start justify-center hover:bg-[#6D489D] font-bold sm:font-medium" onClick={()=> setLevel('one')} >
                 <span className=" h-[24px] w-[54px] sm:h-[36.47px] mt-[10.93px] sm:mt-[7px] flex items-center justify-between  text-[#F3EFF6] gap-3 ">
                     <p className=" text-[#F3EFF6] text-[18px] sm:text-[23px] ">Suivant</p>
-                    <span className="hidden sm:block h-[16.03px] w-[14.92px] relative   flex items-center justify-end">
-                        <span className="absolute w-[4.23px] h-[4.23px] bg-[#F3EFF6] flex items-center justfy-center rounded-[100%] right-[14.92px] "></span>
-                        <span className="flex items-center justify-end  h-full ">
-
-                            <PiCaretRightBold size={22}  />
-                        </span>
-                        
-
-                    </span>
                 </span>
             </button>
 
