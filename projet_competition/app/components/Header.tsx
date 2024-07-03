@@ -38,7 +38,7 @@ const Header = () => (
     <div className="">
       <div className="relative w-full max-w-xs lg:max-w-sm">
         <Image
-          src="/images/illustration-poma.svg"
+          src="/illustration-poma.svg"
           alt="illustration poma"
           width={371.35}
           height={541.63}
@@ -47,11 +47,11 @@ const Header = () => (
       <div className="-translate-y-[230px] lg:-translate-y-[680px]">
       <Link href="/download">
         <button className="mt-[40px] font-[700] center bg-[#74549F] text-white text-[20px] px-[20px] pt-[8px] pb-[12px] rounded-[8px] font-darker-grotesque">
-        Télécharger l’app
+        accéder à l'app
         </button>
       </Link>
       <div className="flex justify-center mt-[48px]">
-      <Image className="max-lg:w-[40px]" src="/images/Group 686.svg" width={50} height={50} alt="grp"/>
+      <Image className="max-lg:w-[40px]" src="/Group 686.svg" width={50} height={50} alt="grp"/>
       </div>
       </div>
     </div>
