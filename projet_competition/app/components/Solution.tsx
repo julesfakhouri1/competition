@@ -17,7 +17,7 @@ const SolutionSection = () => (
             <div className="bg-[#DDD4E7] flex flex-col text-center items-center lg:w-[333px] lg:h-[497px] rounded-[13px] pb-[37px]">
                 <div className="grid place-items-center w-full min-h-[225px] rounded-t-[13px]">
                     <Image 
-                        src="/images/Frame.svg"
+                        src="/Frame.svg"
                         alt="ILLUSTRATION" 
                         width={173}
                         height={156}
@@ -32,7 +32,7 @@ const SolutionSection = () => (
             <div className="bg-[#DDD4E7] flex flex-col text-center items-center lg:w-[333px] lg:h-[497px] rounded-[13px] pb-[30px]">
                 <div className="grid place-items-center w-full min-h-[225px] rounded-t-[13px]">
                     <Image 
-                        src="/images/Calque_2.svg"
+                        src="/Calque_2.svg"
                         alt="ILLUSTRATION" 
                         width={94}
                         height={172}
@@ -47,7 +47,7 @@ const SolutionSection = () => (
             <div className="bg-[#DDD4E7] flex flex-col text-center items-center lg:w-[333px] lg:h-[497px] rounded-[13px] z-50 pb-[36px]">
                 <div className="grid place-items-center w-full min-h-[225px] rounded-t-[13px]">
                     <Image 
-                        src="/images/Calque_2 (1).svg"
+                        src="/main_fleurs_illustration.svg"
                         alt="ILLUSTRATION" 
                         width={235}
                         height={160}

@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Montserrat:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -34,7 +40,131 @@
     transform: scale(0.9);
 }
 
+/* --------------------------------PROJECT STYLE---------------------------------- */
+
+
+
+.playfair-display-font {
+  font-family: 'Playfair Display', sans-serif;
   
+}
+.grot-font {
+  font-family: 'Darker Grotesque', sans-serif;
+}
+
+.roboto-font {
+  font-family: "Roboto", sans-serif;
+
+}
 
 
+.loading-circle {
+  @apply rounded-[100%] relative flex items-center justify-center;
+}
+
+.loading-circle::before{
+  @apply absolute w-[80%] h-[80%] bg-white m-auto bg-white rounded-[100%] left-[10%] top-[10%] ;
+  content: ''
+}
+
+.rolling-loading-circle {
+ @apply h-full w-[40%]  relative
+}
+
+.rolling-loading-circle::before {
+  content: '';
+  @apply absolute top-0 w-[100px] bg-violet-800 h-[20px] rounded-t-[100px];
+}
+
+/* App.css */
+.rotating-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.input-style {
+  @apply h-[56px] w-full rounded-[4.69px] bg-[#E9E2F0] px-[12.62px] outline-none border border-[#E9E2F0] px-[40px]
+}
+
+.input-style:focus {
+  @apply border-2 border-[#513675] rounded-[4.69px]
+}
+
+.active-profile {
+  @apply sm:w-[50%] md:w-[322px] sm:h-[430px] md:h-[440px] 2xl:h-[487px] rounded-[8px] flex flex-col items-center justify-start bg-[#E9E2F0]  border-[3px] border-[#E9E2F0]
+  
+}
+
+.profile {
+  @apply sm:w-[50%] md:w-[322px] sm:h-[430px] md:h-[440px] 2xl:h-[487px] rounded-[8px] flex flex-col items-center justify-start border-[3px] border-[#E9E2F0]
+}
+
+.profile:hover {
+  @apply bg-[#E9E2F0]
+}
+
+.active-mobile-nav{
+  @apply w-1/5 h-full flex flex-col items-center justify-center gap-[4px] text-[#513675] font-extrabold;
+}
+
+.mobile-nav{
+  @apply w-1/5 h-full flex flex-col items-center justify-center gap-[4px] 
+}
+
+.big-nav {
+  @apply h-[76px]  flex flex-row items-start justify-start;
+  font-weight: 500;
+}
+.active-big-nav {
+  @apply h-[76px]  flex flex-row items-start justify-start;
+  font-weight: 900 
+}
+
+.big-nav:hover{
+  @apply text-[#513675] cursor-pointer;
+  font-weight: 700;
+}
+
+.gradient-overlay::before {
+    content: '';
+    position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to top, #513675 0.5px, #FBF7FE00);
+  z-index: 1;
+}
+
+
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(344px, 1fr));
+  gap: 24px;
+  padding: 20px;
+}
+
+.mobile-body-height {
+    height: calc(100vh - 150px - 72px);
+}
+
+.active-notification-btn {
+    @apply  p-[8px] gap-[5px] rounded-[6px]  h-[69px] flex flex-col items-center justify-center text-[#F3EFF6] bg-[#513675]
+}
+
+.notification-btn {
+    
+  @apply p-[8px] gap-[5px] rounded-[6px]  h-[69px] flex flex-col items-center justify-center bg-[#F3EFF6] text-[#513675]
+  
+}
 

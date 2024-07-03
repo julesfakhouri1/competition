@@ -39,8 +39,6 @@ const BottomSearch = () => {
         <div className="mt-[24px] flex flex-col gap-[12px] font-[400] text-[16px] text-[#22172A] px-[23.5px]">
           <h1 className="font-hellixregular ">About</h1>
           <p className="font-hellixmedium">
-            A good listener. I love having a good talk to know each other’s side
-            😍.
           </p>
         </div>
         <div className="mt-[24px] px-[43.5px]">

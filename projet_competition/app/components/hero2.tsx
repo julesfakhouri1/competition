@@ -10,7 +10,7 @@ const Hero2 = () => (
     <div className="flex justify-center">
       <div className="relative w-full lg:max-w-[612px]">
         <Image 
-          src="/images/V1 1.svg" 
+          src="/V1 1.svg" 
           alt="helii" 
           width={612} 
           height={418}
@@ -42,7 +42,7 @@ const Hero2 = () => (
 
         </div>
         <div className="max-sm:hidden sm:ml-[10px]">
-            <Image src="/images/V2 1.svg" alt="uncle" width={418} height={418}/>
+            <Image src="/V2 1.svg" alt="uncle" width={418} height={418}/>
 
         </div>
     </div>

@@ -1,18 +1,19 @@
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
+import Navbar from "@/app/components/Navbar";
+import Header from "@/app//components/Header";
 import Solution from "@/app/components/Solution";
-import Footer from "./components/footer";
-import HeroOne from "./components/hero1";
-import Aunty from "./components/aunty";
-import Hero2 from './components/hero2'
-import AvisSection from "./components/avis";
-import CookieConsent from './components/CookieConsent'
+import Footer from "@/app/components/footer";
+import HeroOne from "@/app/components/hero1";
+import Aunty from "@/app/components/aunty";
+import Hero2 from '@/app/components/hero2'
+import AvisSection from "@/app/components/avis";
+import CookieConsent from '@/app/components/CookieConsent'
+
 
 
 export default function HomePage() {
   return (
-    <div className="overflow-x-hidden">
-       <CookieConsent />
+    <div className="overflow-hidden">
+      <CookieConsent />
       <Navbar />
       <Header />
       <Solution />

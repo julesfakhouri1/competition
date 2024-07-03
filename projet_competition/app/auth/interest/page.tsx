@@ -2,7 +2,7 @@
 import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
-import { interest_one, interest_two } from '@/constants'
+import { interest_one, interest_three, interest_two, interest_four, interest_five } from '@/constants'
 
 
 
@@ -26,7 +26,7 @@ const Interest = () => {
             </span>
 
             <div className="w-full h-[616px] mt-[34.61px] flex flex-col items-start justify-start rounded-[11px] bg-[#E9E2F0] p-[20px] ">
-                <span className="w-[219px] h-[40px] mt-[8px] flex items-center justify-start text-[#513675] playfair-display-font text-[30px] leading-[39.99px] font-bold ">
+                <span className="w-[219px] h-[40px] mt-[18px] flex items-center justify-start text-[#513675] playfair-display-font text-[30px] leading-[39.99px] font-bold ">
                     Centre d’intérêt
                 </span>
 
@@ -37,17 +37,21 @@ const Interest = () => {
                 <span className="w-[298px] h-[14px] mt-[6px] flex items-center justify-start text-[#51367580] grot-font font-semibold text-[12px] leading-[14.06px] ">
                     Sélectionnez toutes les options pertinentes
                 </span>
+                <div className="mt-[22px] flex flex-col items-center justify-start w-full gap-[9px] ">
+
 
                 {interest_one.map((data, ind)=>{
 
                     return(
-                        <span key={ind} className="w-full h-[75px] mt-[22px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start hover:bg-[#513675] hover:text-[#F3EFF6] text-[#513675] ">
+                        <span key={ind} className="w-full h-[75px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start hover:bg-[#513675] hover:text-[#F3EFF6] text-[#513675] ">
                             <span className="w-[298px] h-[24px] mt-[18px]  flex items-center justify-start  grot-font font-semibold text-[18px] leading-[24.41px] ">
                             {data}
                             </span>
                         </span>
                     )
                 })}
+                </div>
+
             </div>
 
             <button className="w-[304px] h-[48.95px] bg-[#513675] rounded-[64px] mt-[36px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '700'}} onClick={()=> setNext('interest-two') } >
@@ -70,7 +74,7 @@ const Interest = () => {
                 <span className="w-[66.23px] border-b-[2px] border-[#E9E2F0] rounded-[1px] "></span>
             </span>
 
-            <div className="w-full h-[616px] mt-[34.61px] flex flex-col items-start justify-start rounded-[11px] bg-[#E9E2F0] px-[20px] ">
+            <div className="w-full h-[616px] mt-[34.61px] flex flex-col items-start justify-start rounded-[11px] bg-[#E9E2F0] p-[20px] ">
                 <span className="w-[219px] h-[40px] mt-[18px] flex items-center justify-start text-[#513675] playfair-display-font text-[30px] leading-[39.99px] font-bold ">
                     Centre d’intérêt
                 </span>
@@ -83,18 +87,20 @@ const Interest = () => {
                 Sélectionnez toutes les options pertinentes
                 </span>
 
+                <div className="mt-[22px] flex flex-col items-center justify-start w-full gap-[9px] ">
 
                     {interest_two.map((data, ind)=>{
                         
                         return(
-                            <span key={ind} className="w-full h-[75px] mt-[22px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start hover:bg-[#513675] hover:text-[#F3EFF6] text-[#513675] ">
+                            <span key={ind} className="w-full h-[75px]  rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start hover:bg-[#513675] hover:text-[#F3EFF6] text-[#513675] ">
                                 <span className="w-[298px] h-[24px] mt-[18px]  flex items-center justify-start  grot-font font-semibold text-[18px] leading-[24.41px] ">
                                 {data}
                                 </span>
                             </span>
                         )
                     })}
-                
+                </div>
+
             </div>
 
             <button className="w-[304px] h-[48.95px] bg-[#513675] rounded-[64px] mt-[36px] grot-font flex items-start justify-center hover:bg-[#6D489D] font-bold" onClick={()=> setNext('interest-three') } >
@@ -117,8 +123,8 @@ const Interest = () => {
                 <span className="w-[66.23px] border-b-[2px] border-[#E9E2F0] rounded-[1px] "></span>
             </span>
 
-            <div className="w-full h-[616px] mt-[34.61px] flex flex-col items-start justify-start rounded-[11px] bg-[#E9E2F0] px-[20px] ">
-                <span className="w-[219px] h-[40px] mt-[18px] flex items-center justify-start text-[#513675] playfair-display-font text-[30px] leading-[39.99px] font-bold ">
+            <div className="w-full h-[616px] mt-[34.61px] flex flex-col items-start justify-start rounded-[11px] bg-[#E9E2F0] p-[20px] ">
+                <span className="w-[219px] h-[40px] mt-[8px] flex items-center justify-start text-[#513675] playfair-display-font text-[30px] leading-[39.99px] font-bold ">
                     Centre d’intérêt
                 </span>
 
@@ -130,35 +136,21 @@ const Interest = () => {
                 Sélectionnez toutes les options pertinentes
                 </span>
 
-                <span className="w-full h-[75px] mt-[22px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[24px] mt-[23px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Histoire de vie
-                    </span>
-                </span>
+                <div className="mt-[22px] flex flex-col items-center justify-start w-full gap-[9px] pb-[20px] ">
 
-                <span className="w-full h-[75px] mt-[9px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[24px] mt-[23px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Compétences professionnelles
-                    </span>
-                </span>
 
-                <span className="w-full h-[75px] mt-[9px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[24px] mt-[23px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Hobbies et intérêt
-                    </span>
-                </span>
-
-                <span className="w-full h-[75px] mt-[9px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[24px] mt-[23px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Expérience et voyage
-                    </span>
-                </span>
-
-                <span className="w-full h-[75px] mt-[9px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[24px] mt-[23px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Autre ( veuillez préciser )
-                    </span>
-                </span>
+                {interest_three.map((data, ind)=>{
+                    
+                    return(
+                        <span key={ind} className="w-full h-[75px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start hover:bg-[#513675] hover:text-[#F3EFF6] text-[#513675] ">
+                            <span className="w-[298px] h-[24px] mt-[18px]  flex items-center justify-start  grot-font font-semibold text-[18px] leading-[24.41px] ">
+                            {data}
+                            </span>
+                        </span>
+                    )
+                })}
+                </div>
+                
             </div>
 
             <button className="w-[304px] h-[48.95px] bg-[#513675] rounded-[64px] mt-[36px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '700'}} onClick={()=> setNext('interest-four') } >
@@ -193,41 +185,22 @@ const Interest = () => {
                 <span className="w-[298px] h-[12px] mt-[6px] flex items-center justify-start text-[#51367580] grot-font font-semibold text-[12px] leading-[14.06px] ">
                 Sélectionnez toutes les options pertinentes
                 </span>
+                
+                <div className="mt-[22px] flex flex-col items-center justify-start w-full gap-[9px] ">
 
-                <span className="w-full h-[63.32px] mt-[22px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Quotidiennement
-                    </span>
-                </span>
+                {interest_four.map((data, ind)=>{
+                    
+                    return(
+                        <span key={ind} className="w-full h-[63.32px]  rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start hover:bg-[#513675] hover:text-[#F3EFF6] text-[#513675] ">
+                            <span className="w-[298px] h-[24px] mt-[18px]  flex items-center justify-start  grot-font font-semibold text-[18px] leading-[24.41px] ">
+                            {data}
+                            </span>
+                        </span>
+                    )
+                })}
+                </div>
 
-                <span className="w-full h-[63.32px] mt-[7.6px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Plusieurs fois par semaine
-                    </span>
-                </span>
-
-                <span className="w-full h-[63.32px] mt-[7.6px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Une fois par semaine
-                    </span>
-                </span>
-
-                <span className="w-full h-[63.32px] mt-[7.6px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Plusieurs fois par mois
-                    </span>
-                </span>
-
-                <span className="w-full h-[63.32px] mt-[7.6px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Une fois par mois
-                    </span>
-                </span>
-                <span className="w-full h-[63.32px] mt-[7.6px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Moins souvent
-                    </span>
-                </span>
+                
             </div>
 
             <button className="w-[304px] h-[48.95px] bg-[#513675] rounded-[64px] mt-[36px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '700'}} onClick={()=> setNext('interest-five') } >
@@ -255,7 +228,7 @@ const Interest = () => {
                     Centre d’intérêt
                 </span>
 
-                <span className="w-[298px] h-[57px] mt-[22px] flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[18.75px] ">
+                <span className="w-[298px] h-[57px] mt-[18px] flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[18.75px] ">
                 Quel mode de communication préférez-vous pour rester en contact avec vos correspondances ?
                 </span>
 
@@ -263,40 +236,20 @@ const Interest = () => {
                 Sélectionnez toutes les options pertinentes
                 </span>
 
-                <span className="w-full h-[63.32px] mt-[22px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Messagerie texte
-                    </span>
-                </span>
+                <div className="mt-[22px] flex flex-col items-center justify-start w-full gap-[9px] ">
 
-                <span className="w-full h-[63.32px] mt-[7.6px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Appels téléphone
-                    </span>
-                </span>
-
-                <span className="w-full h-[63.32px] mt-[7.6px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Appel vidéo
-                    </span>
-                </span>
-
-                <span className="w-full h-[63.32px] mt-[7.6px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Emails
-                    </span>
-                </span>
-
-                <span className="w-full h-[63.32px] mt-[7.6px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Réseaux sociaux
-                    </span>
-                </span>
-                <span className="w-full h-[63.32px] mt-[7.6px] rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start  ">
-                    <span className="w-[298px] h-[20.26px] mt-[19.42px]  flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Autres ( veuillez préciser )
-                    </span>
-                </span>
+                {interest_five.map((data, ind)=>{
+                    
+                    return(
+                        <span key={ind} className="w-full h-[63.32px]  rounded-[8px] border-[1px] border-[#513675] bg-[#F3EFF6] px-[19px] flex justify-start hover:bg-[#513675] hover:text-[#F3EFF6] text-[#513675] ">
+                            <span className="w-[298px] h-[24px] mt-[18px]  flex items-center justify-start  grot-font font-semibold text-[18px] leading-[24.41px] ">
+                            {data}
+                            </span>
+                        </span>
+                    )
+                })}
+                </div>
+                
             </div>
 
             <button className="w-[304px] h-[48.95px] bg-[#513675] rounded-[64px] mt-[36px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '700'}} onClick={()=> setNext('completed') } >

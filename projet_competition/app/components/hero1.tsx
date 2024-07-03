@@ -162,7 +162,6 @@ const Hero = () => (
 </clipPath>
 </defs>
 </svg>
-
   <section className="mt-16 py-16 max-sm:py-0 pl-[20px] pr-[18px] lg:px-[140px] mx-auto bg-[#F3EFF6]">
     <h2 className="text-[36px] lg:text-[52px] font-[800] text-center pt-4 text-[#4C3768] font-playfair">
       La quête de Poma
@@ -173,7 +172,7 @@ const Hero = () => (
     <div className="bg-[#DDD4E7] flex text-center items-center justify-center px-4 rounded-lg md:mb-0 md:w-1/2 h-[330px] mt-[27px]">
       <div className="h-[16rem] w-[200px] py-8">
         <Image
-          src="/images/Group 692.svg"
+          src="/Group 692.svg"
           alt="ILLUSTRATION"
           width={228}
           height={228}
@@ -192,7 +191,7 @@ const Hero = () => (
     <div className="bg-[#DDD4E7]  flex flex-row-reverse text-center items-center justify-center px-4 mt-[27px] rounded-lg md:w-1/2 h-[330px]">
       <div className="h-[16rem] w-[200px] py-8">
         <Image
-          src="/images/Frame (2).svg"
+          src=" /Frame (2).svg"
           alt="ILLUSTRATION"
           width={228}
           height={228}

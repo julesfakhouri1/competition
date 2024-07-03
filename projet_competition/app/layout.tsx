@@ -1,7 +1,7 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import Script from "next/script";
-import "./globals.css";
+import "@/app/globals.css";
 // lib/fonts.ts
 import { Darker_Grotesque, Playfair_Display } from "next/font/google";
 import localFont from "next/font/local";
@@ -75,8 +75,6 @@ const metadata: Metadata = {
   title: "Poma",
   description: "Poma app",
 };
-
-
 
 export default function RootLayout({
   children,

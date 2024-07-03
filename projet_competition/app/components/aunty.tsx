@@ -3,7 +3,7 @@ import Image from "next/image";
 const Aunty = () => (
     <div className="relative">
           <Image
-      src="/images/Vector 12.svg"
+      src="/Vector 12.svg"
       alt="bar"
       width={236.14}
       height={979.35}
@@ -17,7 +17,7 @@ const Aunty = () => (
     </h2>
     <div className="flex flex-col w-full md:flex-row justify-between mt-8">
       <div className="">
-        <Image src="/images/V3 4.svg" alt="aunty" width={400} height={400} />
+        <Image src="/V3 4.svg" alt="aunty" width={400} height={400} />
       </div>
       <div className="font-darker-grotesque relative max-sm:relative max-sm:left-0 left-6 flex-col flex justify-center py-4 rounded-lg flex-1">
         <h3 className="mt-4 text-[20px] lg:text-[26px] font-[500] leading-[27px] text-[#4C3768] w-full">
