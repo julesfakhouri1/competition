@@ -26,3 +26,8 @@ export interface SideNavProps {
     setSelectedNav: (selectedNav: string)=> void;
     handleNav: HandleNavFunction;
 }
+
+export interface AlertProps {
+    message: string;
+    type: string;
+}
