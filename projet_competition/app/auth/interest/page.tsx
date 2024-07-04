@@ -130,7 +130,7 @@ const Interest = () => {
                 </span>
 
                 <span className="w-[298px] sm:w-full h-[48px] mt-[30px] sm:mt-0 flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                Quels aspects de votre vie aimeriez-vous partager avec vos correspondances sur POMA ?
+                Quel type de relation espérez-vous développer avec vos petits-enfants de cœur ?
                 </span>
 
                 <span className="w-[298px] sm:w-full h-[14px] mt-[20px] flex items-center justify-start text-[#51367580] grot-font font-semibold text-[12px] leading-[14.06px] ">
@@ -180,7 +180,7 @@ const Interest = () => {
                 </span>
 
                 <span className="w-[298px] sm:w-full h-[48px] mt-[14px] sm:mt-0 flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                À quelle fréquence souhaitez-vous participer à des activités organisées par POMA ?
+                Quel type de personnalité recherchez-vous chez un petits-enfants de cœur ?
                 </span>
 
                 <span className="w-[298px] h-[14px] mt-[6px] flex items-center justify-start text-[#51367580] grot-font font-semibold text-[12px] leading-[14.06px] ">
@@ -230,7 +230,7 @@ const Interest = () => {
                 </span>
 
                 <span className="w-[298px] sm:w-full h-[48px] mt-[14px] sm:mt-0 flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                Quel mode de communication préférez-vous pour rester en contact avec vos correspondances ?
+                Quelle qualité trouvez-vous la plus importante ?
                 </span>
 
                 <span className="w-[298px] h-[14px] mt-[12px] flex items-center justify-start text-[#51367580] grot-font font-semibold text-[12px] leading-[14.06px] ">

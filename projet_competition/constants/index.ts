@@ -88,11 +88,11 @@ export const interest_one = [  'Proches, pour des rencontres en personne fréque
 
 export const interest_two = [ 'Discussions philosophiques et débats', 'Activités culturelles (visites de musées, concerts)', 'Projets créatifs (peinture, bricolage)', 'Loisirs actifs (randonnées, sport)', ]
 
-export const interest_three = [ 'Histoire de vie', 'Compétences professionnelles', 'Hobbies et intérêt', 'Expérience et voyage', 'Autre ( veuillez préciser )']
+export const interest_three = [ 'Une relation amicale avec des échanges réguliers', 'Un mentorat où vous pouvez partager vos expériences de vie', 'Une relation familiale avec un soutien émotionnel mutuel', 'Une relation basée sur des intérêts communs et des activités partagée']
 
-export const interest_four = ['Quotidiennement', 'Plusieurs fois par semaine', 'Une fois par semaine', 'Plusieurs fois par mois', 'Une fois par mois', 'Moins souvent']
+export const interest_four = ['Dynamique et énergique, toujours prêt pour de nouvelles aventures', 'Calme et réfléchi, apprécié pour des discussions profondes', 'Créatif et artistique, partageant des passions', 'Sociable et convivial, aimant les interactions sociales et les activités en groupe',]
 
-export const interest_five = ['Messagerie texte', 'Appels téléphone', 'Appel vidéo', 'Emails', 'Réseaux sociaux', 'Autres ( veuillez préciser )']
+export const interest_five = [" L'écoute et l'empathie, pour un soutien émotionnel", "La curiosité et l'ouverture d'esprit, pour apprendre", 'La fiabilité et la régularité, pour une relation stable et de confiance', "La joie de vivre et l'enthousiasme, pour apporter",]
 
 
 
