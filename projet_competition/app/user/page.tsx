@@ -1,5 +1,5 @@
 'use client'
-import Reat, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
 import { LoadingBar } from '../components/donutChart'
 import { GoDotFill } from "react-icons/go";
@@ -81,6 +81,10 @@ const LandingPage = ()=>{
                     <button className="w-[304px] h-[48.95px] sm:w-[211px] sm:h-[56px] bg-[#513675] rounded-[64px] sm:rounded-[6.44px] max-sm:mt-[40px] sm:mt-[21.48px] grot-font flex items-start justify-center hover:bg-[#6D489D] font-bold sm:font-medium"  onClick={()=> {router.push('/auth')}}>
                         <span className=" h-[24px]  w-[54px] sm:h-[36.47px] sm:w-[94.92px] mt-[7.93px] sm:mt-[7px] flex items-start justify-between  text-[#F3EFF6]  ">
                             <p className=" text-[#F3EFF6] text-[18px] sm:text-[23px] grot-font sm:mt-[2px] sm:leading-[32.2px] ">Suivant</p>
+                            <span className="hidden sm:block sm:w-[25px] sm:flex sm:items-center sm:justify-end sm:relative sm:mt-[9px] ">
+                                <IoIosArrowForward size={23} />
+                                <span className="w-[10px] absolute -left-[5px]"><LuDot size={23} /> </span>
+                            </span>
                         </span>
                     </button>
 

@@ -27,11 +27,17 @@ const Signup = () => {
         setAuth({...auth, [name]: value})
     }
 
+    function validateEmail(email:string) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        return re.test(email);
+    }
+
     const handleSubmit = async(e:any) => {
         e.preventDefault()
        
         if (!auth.email){
-            setAlert({message: 'Email is required', type: 'error'})
+            setAlert({message: "L'email est requis", type: 'error'})
             setTimeout(()=>{
                 setAlert({message: '', type: ''})
             },2500)
@@ -40,7 +46,7 @@ const Signup = () => {
         }
         
         if (!auth.password){
-            setAlert({message: 'Password is required', type: 'error'})
+            setAlert({message: 'Le mot de passe est requis', type: 'error'})
             setTimeout(()=>{
                 setAlert({message: '', type: ''})
             },2500)
@@ -49,7 +55,7 @@ const Signup = () => {
         }
         if (!auth.name){
             
-            setAlert({message: 'Username is required', type: 'error'})
+            setAlert({message: "Le nom d'utilisateur est requis", type: 'error'})
             setTimeout(()=>{
                 setAlert({message: '', type: ''})
             },2500)
@@ -58,15 +64,27 @@ const Signup = () => {
         
         if (auth.password !== auth.confirmPassword){
             
-            setAlert({message: 'Password do not match', type: 'error'})
+            setAlert({message: "Les mots de passe ne correspondent pas", type: 'error'})
             setTimeout(()=>{
                 setAlert({message: '', type: ''})
             },2500)
             return;
 
         }
+        // Validate email
+
+        if (!validateEmail(auth.email)) {
+            setAlert({message:  "Adresse e-mail invalide", type: 'error'})
+            setTimeout(()=>{
+                setAlert({message: '', type: ''})
+            },2500);
+            return;
+        
+        } 
 
         if (auth.name && auth.password && auth.email){
+
+
             try{
                 const response = await axios.post(`https://poma.onrender.com/api/v1/signup`, {email:auth.email, password: auth.password, user_name:auth.name } ,{
                     headers: {
@@ -75,11 +93,11 @@ const Signup = () => {
                 })
 
                 if (response.status == 200 ){
-                    setAlert({message: 'Account Created Successfully', type: 'success'})
+                    setAlert({message: "Compte créé avec succès", type: 'success'})
                     setAuth({name: '', email: '', password: '', confirmPassword: ''})
                     setTimeout(()=>{
                         setAlert({message: '', type: ''})
-                        router.push('/home')
+                        router.push('/auth/interest')
                     },2500)
 
                 }
@@ -90,7 +108,7 @@ const Signup = () => {
                     console.log(error.response)
                 } else {
                     if(error.response.status == 400){
-                        setAlert({message: 'Email already registered', type: 'error'})
+                        setAlert({message: "Email déjà enregistré", type: 'error'})
                         setTimeout(()=>{
                             setAlert({message: '', type: ''})
                         },2500)

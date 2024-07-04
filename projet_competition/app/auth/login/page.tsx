@@ -29,23 +29,44 @@ const Login = () => {
         setAuth({...auth, [name]: value})
     }
 
+    function validateEmail(email:string) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        return re.test(email);
+    }
+
     const  handleSubmit = async(e:any) =>{
         e.preventDefault()
         if (!auth.email){
-            setAlert({message: 'Email is required', type: 'error'})
+            setAlert({message: "L'email est requis", type: 'error'})
             setTimeout(()=>{
                 setAlert({message: '', type: ''})
             },2500)
+            return;
         }
 
         if (!auth.password){
-            setAlert({message: 'Password is required', type: 'error'})
+            setAlert({message: "Le mot de passe est requis", type: 'error'})
             setTimeout(()=>{
                 setAlert({message: '', type: ''})
             },2500)
+            return;
+        }
+        
+        //validate email
+        if (!validateEmail(auth.email)) {
+            console.log('invalid email')
+            setAlert({message:  "Adresse e-mail invalide", type: 'error'})
+            setTimeout(()=>{
+                setAlert({message: '', type: ''})
+            },2500)
+            
+            return;
         }
 
         if (auth.email && auth.password){
+
+
             try {
                 
                 const response = await axios.post("https://poma.onrender.com/api/v1/login", {email: auth.email, password: auth.password}, {
@@ -57,7 +78,7 @@ const Login = () => {
                 setAuth({email: '', password: ''})
                 
                 if (response.status == 200 ){
-                    setAlert({message: 'Login successful', type: 'success'})
+                    setAlert({message:  "Connexion réussie", type: 'success'})
                     setTimeout(()=>{
                         setAlert({message: '', type: ''})
                         router.push('/home')
@@ -72,7 +93,7 @@ const Login = () => {
                     console.log(error.response)
                 } else {
                 console.log(error.response.status);
-                setAlert({message: 'Incorrect Password', type: 'error'})
+                setAlert({message: "Mot de passe incorrect", type: 'error'})
                     setTimeout(()=>{
                         setAuth({...auth, password: ''})
                         setAlert({message: '', type: ''})
@@ -203,7 +224,7 @@ const Login = () => {
            
 
                 <span className="w-full h-[66px] mt-[20px] flex flex-col items-start justify-start gap-[2px] relative">
-                    <p className="text-[24px] text-[#513675] flex items-center justify-start grot-font font-semibold leading-[24.41px] " style={{fontWeight: '600', lineHeight: '24.41px'}} >Adresse e-mail</p>
+                    <p className="text-[24px] text-[#513675] flex items-center justify-start grot-font font-semibold leading-[24.41px] " style={{fontWeight: '600', lineHeight: '24.41px'}} >Adresse e-maill</p>
                     <input type="email" name="email" id="email" value={auth.email} onChange={handleChange} className='h-[40px] w-full outline-none border-2 focus:border-[#513675] px-[30px] rounded-[4.69px] bg-[#E9E2F0] ' />
                     <span className="w-[15.78px] h-[40px] left-[12px] bottom-0 flex items-center justify-center  cursor-pointer absolute text-[#513675] ">
                         <IoMailOutline size={22} />

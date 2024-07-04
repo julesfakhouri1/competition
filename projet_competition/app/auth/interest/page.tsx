@@ -32,7 +32,7 @@ const Interest = () => {
                 </span>
 
                 <span className="w-[298px] sm:w-full h-[48px] mt-[14px] sm:mt-0 flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                    Quelles activités aimez-vous pratiquer pendant votre temps libre ?
+                    Quel niveau de proximité géographique souhaiteriez-vous ?
                 </span>
 
                 <span className="w-[298px] h-[14px] mt-[6px] flex items-center justify-start text-[#51367580] grot-font font-semibold text-[12px] leading-[14.06px] ">
@@ -81,7 +81,7 @@ const Interest = () => {
                 </span>
 
                 <span className="w-[298px] sm:w-full sm:mt-0 h-[48px] mt-[14px] flex items-center justify-start text-[#513675] grot-font font-semibold text-[18px] leading-[24.41px] ">
-                Quelle est votre principale motivation pour utiliser POMA ?
+                Quel type d'activités aimeriez-vous partager avec vos petits-enfants de cœur ?
                 </span>
 
                 <span className="w-[298px] h-[14px] mt-[6px] flex items-center justify-start text-[#51367580] grot-font font-semibold text-[12px] leading-[14.06px] ">
