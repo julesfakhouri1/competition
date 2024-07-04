@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { PiCaretRightBold } from 'react-icons/pi'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
@@ -11,12 +11,17 @@ import { IoMailOutline } from "react-icons/io5";
 import { CiLock } from "react-icons/ci";
 import { LuEyeOff, LuEye, LuDot } from "react-icons/lu";
 import { IoIosArrowForward } from 'react-icons/io'
+import axios from "axios"
+import Alert from "../../components/alert"
 
 
 const Login = () => {
     const router = useRouter()
+    const [emailError, setEmailError] = useState({display: false, desc: ''})
+    const [passwordError, setPasswordError] = useState({display: false, desc: ''})
     const [showPassword, setShowPassword] = useState(false)
     const [auth, setAuth] = useState({email: '', password: ''})
+    const [alert, setAlert] = useState({message: '', type: ''})
 
     function handleChange(e:any) {
         const name = e.target.name
@@ -26,17 +31,63 @@ const Login = () => {
 
     const  handleSubmit = async(e:any) =>{
         e.preventDefault()
-        console.log(auth)
         if (!auth.email){
-            console.log('Email is required')
+            setAlert({message: 'Email is required', type: 'error'})
+            setTimeout(()=>{
+                setAlert({message: '', type: ''})
+            },2500)
         }
+
         if (!auth.password){
-            console.log('Password is requied')
+            setAlert({message: 'Password is required', type: 'error'})
+            setTimeout(()=>{
+                setAlert({message: '', type: ''})
+            },2500)
+        }
+
+        if (auth.email && auth.password){
+            try {
+                
+                const response = await axios.post("https://poma.onrender.com/api/v1/login", {email: auth.email, password: auth.password}, {
+                    headers: {
+                        "Content-type":"application/json"
+                    }
+                })
+
+                setAuth({email: '', password: ''})
+                
+                if (response.status == 200 ){
+                    setAlert({message: 'Login successful', type: 'success'})
+                    setTimeout(()=>{
+                        setAlert({message: '', type: ''})
+                        router.push('/home')
+                    },2500)
+
+                }
+
+                
+            } catch (error:any) {
+                if (error.response && error.response.status === 404) {
+                    // Handle 404 error specifically
+                    console.log(error.response)
+                } else {
+                console.log(error.response.status);
+                setAlert({message: 'Incorrect Password', type: 'error'})
+                    setTimeout(()=>{
+                        setAuth({...auth, password: ''})
+                        setAlert({message: '', type: ''})
+                    },2500)
+                }
+            }
         }
     }
 
     return (
     <div className="w-full h-[100vh] flex flex-col items-center justify-start relative overflow-hidden">
+        {/* alert popup */}
+        <span className="w-[95%] flex items-center justify-start absolute top-[20px]  left-[20px] ">
+            {alert.message && <Alert message={alert.message} type={alert.type}  /> }
+        </span>
         {/* The floating icon */}
         <div className="absolute -right-[350px] -top-[50px] sm:-top-[85px] sm:-right-[175px] md:-top-[75px] md:-right-[175px] sm:-right-[100px] lg:-right-[140px]  "  style={{transform: 'rotate(0deg)'}} >
             <span className="bg-transparent w-[616.89px] h-[236.14px]   flex items-center justify-center relative  overflow-auto  "  >
@@ -73,6 +124,7 @@ const Login = () => {
                             <IoMailOutline size={22} />
                         </span>
                     </span>
+                    {/* show email error  */}
 
                     <span className="w-full  flex flex-col items-start justify-start gap-[5px] relative">
                         <p className="text-[20.66px] text-[#513675] flex items-center justify-start font-normal leading-[18.71px] grot-font "  >Mot de passe</p>
@@ -85,6 +137,7 @@ const Login = () => {
                             {showPassword ? <LuEye size={20} /> : <LuEyeOff size={20} />}
                         </span>
                     </span>
+
 
                     <button className="w-[211px] h-[56px] bg-[#513675] rounded-[6.44px] sm:mt-[25px] md:mt-[20px] lg:mt-[15px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '500'}} onClick={handleSubmit } >
                             <p className=" text-[#F3EFF6] mt-[6px] text-[23px] grot-font sm:font-extrabold leading-[32.2px] ">Connexion</p>
@@ -169,7 +222,7 @@ const Login = () => {
                     </span>
                 </span>
 
-                <button className="w-[142.01px] h-[46.28px] bg-[#513675] rounded-[64px] mt-[40px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '700'}} onClick={()=> router.push('/home') } >
+                <button className="w-[142.01px] h-[46.28px] bg-[#513675] rounded-[64px] mt-[40px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '700'}} onClick={handleSubmit } >
                     <span className=" h-[24px] mt-[9.22px] flex items-center justify-between  text-[#F3EFF6] gap-3 ">
                         <p className=" text-[#F3EFF6] text-[18px] grot-font ">Connexion</p>
                         
