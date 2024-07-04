@@ -24,9 +24,15 @@ const Login = () => {
         setAuth({...auth, [name]: value})
     }
 
-    function handleSubmit(e:any) {
+    const  handleSubmit = async(e:any) =>{
         e.preventDefault()
         console.log(auth)
+        if (!auth.email){
+            console.log('Email is required')
+        }
+        if (!auth.password){
+            console.log('Password is requied')
+        }
     }
 
     return (
@@ -80,14 +86,8 @@ const Login = () => {
                         </span>
                     </span>
 
-                    <button className="w-[211px] h-[56px] bg-[#513675] rounded-[6.44px] sm:mt-[25px] md:mt-[20px] lg:mt-[15px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '500'}} onClick={()=> router.push('/auth/login') } >
-                        <span className=" h-[36.47px] sm:w-[129.92px] mt-[7px] flex items-start justify-between  text-[#F3EFF6] gap-3 ">
-                            <p className=" text-[#F3EFF6] mt-[2px] text-[23px] grot-font sm:font-extrabold leading-[32.2px] ">Connexion</p>
-                            <span className="w-[25px] flex items-center justify-end relative mt-[9px] ">
-                                <IoIosArrowForward size={23} />
-                                <span className="w-[10px] absolute -left-[5px]"><LuDot size={23} /> </span>
-                            </span>
-                        </span>
+                    <button className="w-[211px] h-[56px] bg-[#513675] rounded-[6.44px] sm:mt-[25px] md:mt-[20px] lg:mt-[15px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '500'}} onClick={handleSubmit } >
+                            <p className=" text-[#F3EFF6] mt-[6px] text-[23px] grot-font sm:font-extrabold leading-[32.2px] ">Connexion</p>
                     </button>
 
                 </span>

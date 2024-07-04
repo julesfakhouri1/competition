@@ -8,8 +8,6 @@ import Hero2 from '@/app/components/hero2'
 import AvisSection from "@/app/components/avis";
 import CookieConsent from '@/app/components/CookieConsent'
 
-
-
 export default function HomePage() {
   return (
     <div className="overflow-hidden">

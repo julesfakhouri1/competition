@@ -1,12 +1,13 @@
 'use client'
 import React, {useState, useEffect} from 'react'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
+
 import { CiLock } from 'react-icons/ci'
 import { IoMailOutline } from 'react-icons/io5'
 import { LuEye, LuEyeOff } from 'react-icons/lu'
 import { RiFacebookFill, RiGoogleFill, RiAppleFill } from 'react-icons/ri'
 import { GoPerson } from 'react-icons/go'
+import { useRouter } from 'next/navigation'
 
 
 const Signup = () => {
@@ -22,8 +23,12 @@ const Signup = () => {
         setAuth({...auth, [name]: value})
     }
 
-    function handleSubmit(e:any) {
+    const handleSubmit = async(e:any) => {
         e.preventDefault()
+        if (!auth.email || !auth.password || !auth.name ){
+            console.log(' Email, Usernme, and Password are required')
+        }
+        
         console.log(auth)
     }
 
@@ -177,7 +182,7 @@ const Signup = () => {
 
             </div>
 
-            <button className="w-[265px] h-[56px] sm:mt-[30px] md:mt-[25px] 2xl:mt-[40px] bg-[#513675] rounded-[6.44px]  grot-font flex items-start justify-center hover:bg-[#6D489D]"  onClick={()=> router.push('/home') } >
+            <button className="w-[265px] h-[56px] sm:mt-[30px] md:mt-[25px] 2xl:mt-[40px] bg-[#513675] rounded-[6.44px]  grot-font flex items-start justify-center hover:bg-[#6D489D]"  onClick={()=> router.push('/auth/interest') } >
                     <span className=" h-[36px] mt-[10px] flex items-center justify-between  text-[#F3EFF6] gap-3 ">
                         <p className=" text-[#F3EFF6] text-[18px] font-extrabold grot-font ">Valider </p>
                     </span>
