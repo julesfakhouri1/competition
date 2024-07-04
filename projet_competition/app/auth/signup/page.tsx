@@ -8,6 +8,8 @@ import { LuEye, LuEyeOff } from 'react-icons/lu'
 import { RiFacebookFill, RiGoogleFill, RiAppleFill } from 'react-icons/ri'
 import { GoPerson } from 'react-icons/go'
 import { useRouter } from 'next/navigation'
+import axios from "axios"
+import Alert from "../../components/alert"
 
 
 const Signup = () => {
@@ -16,6 +18,8 @@ const Signup = () => {
     const [next, setNext] = useState('signup')
     const [selected, setSelected] = useState('')
     const [showPassword, setShowPassword] = useState(false)
+    const [alert, setAlert] = useState({message: '', type: ''})
+
 
     function handleChange(e:any) {
         const name = e.target.name
@@ -25,11 +29,76 @@ const Signup = () => {
 
     const handleSubmit = async(e:any) => {
         e.preventDefault()
-        if (!auth.email || !auth.password || !auth.name ){
-            console.log(' Email, Usernme, and Password are required')
+       
+        if (!auth.email){
+            setAlert({message: 'Email is required', type: 'error'})
+            setTimeout(()=>{
+                setAlert({message: '', type: ''})
+            },2500)
+            return;
+            
         }
         
-        console.log(auth)
+        if (!auth.password){
+            setAlert({message: 'Password is required', type: 'error'})
+            setTimeout(()=>{
+                setAlert({message: '', type: ''})
+            },2500)
+            return;
+
+        }
+        if (!auth.name){
+            
+            setAlert({message: 'Username is required', type: 'error'})
+            setTimeout(()=>{
+                setAlert({message: '', type: ''})
+            },2500)
+            return;
+        }
+        
+        if (auth.password !== auth.confirmPassword){
+            
+            setAlert({message: 'Password do not match', type: 'error'})
+            setTimeout(()=>{
+                setAlert({message: '', type: ''})
+            },2500)
+            return;
+
+        }
+
+        if (auth.name && auth.password && auth.email){
+            try{
+                const response = await axios.post(`https://poma.onrender.com/api/v1/signup`, {email:auth.email, password: auth.password, user_name:auth.name } ,{
+                    headers: {
+                        "Content-type": "application/json",
+                    }
+                })
+
+                if (response.status == 200 ){
+                    setAlert({message: 'Account Created Successfully', type: 'success'})
+                    setAuth({name: '', email: '', password: '', confirmPassword: ''})
+                    setTimeout(()=>{
+                        setAlert({message: '', type: ''})
+                        router.push('/home')
+                    },2500)
+
+                }
+
+            }catch(error:any){
+                if (error.response && error.response.status === 404) {
+                    // Handle 404 error specifically
+                    console.log(error.response)
+                } else {
+                    if(error.response.status == 400){
+                        setAlert({message: 'Email already registered', type: 'error'})
+                        setTimeout(()=>{
+                            setAlert({message: '', type: ''})
+                        },2500)
+                    }
+                }
+            }
+        }
+        
     }
 
     useEffect(()=>{
@@ -44,6 +113,11 @@ const Signup = () => {
   return (
     <div className="w-full h-[100vh] flex flex-col items-center justify-start relative overflow-hidden ">
         {/* The floating icon */}
+         {/* alert popup */}
+         <span className="w-[95%] flex items-center justify-start absolute top-[20px]  left-[20px] ">
+            {alert.message && <Alert message={alert.message} type={alert.type}  /> }
+        </span>
+
         <div className="absolute -right-[350px] -top-[70px] sm:-top-[85px] sm:-right-[175px] md:-top-[75px] md:-right-[175px] sm:-right-[100px] lg:-right-[140px]  "  style={{transform: 'rotate(0deg)'}} >
             <span className="bg-transparent w-[616.89px] h-[236.14px]   flex items-center justify-center relative  overflow-auto  "  >
                 <Image 
@@ -119,7 +193,7 @@ const Signup = () => {
                 
 
 
-                <button className="w-[304px] h-[48.95px] bg-[#513675] rounded-[6.44px] sm:mt-[55px] md:mt-[50px] lg:mt-[45px] 2xl:mt-[60px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '500'}} onClick={()=> setNext('profile') } >
+                <button className="w-[304px] h-[48.95px] bg-[#513675] rounded-[6.44px] sm:mt-[55px] md:mt-[50px] lg:mt-[45px] 2xl:mt-[60px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '500'}} onClick={handleSubmit} >
                         <span className=" h-[31px] mt-[7px] flex items-center justify-between  text-[#F3EFF6] gap-3 ">
                             <p className=" text-[#F3EFF6] text-[23px] grot-font ">Inscription </p>
                         </span>
@@ -275,7 +349,7 @@ const Signup = () => {
                     </span>
                 </span>
 
-                <button className="w-[173px] h-[52px] bg-[#513675] rounded-[64px] mt-[20px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '700'}} onClick={()=> setNext('profile')} >
+                <button className="w-[173px] h-[52px] bg-[#513675] rounded-[64px] mt-[20px] grot-font flex items-start justify-center hover:bg-[#6D489D]" style={{fontWeight: '700'}} onClick={handleSubmit} >
                     <span className=" h-[24px] mt-[9.22px] flex items-center justify-between  text-[#F3EFF6] gap-3 ">
                         <p className=" text-[#F3EFF6] text-[22px] grot-font leading-[26px] ">Inscription</p>
                         
